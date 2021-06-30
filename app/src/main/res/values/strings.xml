@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">Google Repositories</string>
+
+    <string name="no_repositories">No repositories</string>
+    <string name="google_logo_description">Google logo</string>
+
+    <!-- ItemRepository: -->
+    <string name="name_header">Name:</string>
+    <string name="dummy_name">Dummy repository name</string>
+    <string name="description_header">Description:</string>
+    <string name="dummy_description">Dummy repository description</string>
+    <string name="no_description">No description</string>
+</resources>

@@ -1,0 +1,38 @@
+package com.example.googlerepositories.api.response
+
+import com.squareup.moshi.Json
+import com.squareup.moshi.JsonClass
+
+@JsonClass(generateAdapter = true)
+data class RepositoryResponse(
+    @Json(name = "id") val id: Long,
+    @Json(name = "node_id") val nodeId: String,
+    @Json(name = "name") val name: String,
+    @Json(name = "full_name") val fullName: String,
+    @Json(name = "private") val private: Boolean,
+    @Json(name = "owner") val owner: OwnerResponse,
+    @Json(name = "html_url") val htmlUrl: String,
+    @Json(name = "description") val description: String?,
+    @Json(name = "fork") val fork: Boolean
+)
+
+data class OwnerResponse(
+    @Json(name = "login") val login: String,
+    @Json(name = "id") val id: Long,
+    @Json(name = "node_id") val nodeId: String,
+    @Json(name = "avatar_url") val avatarUrl: String,
+    @Json(name = "gravatar_id") val gravatarId: String,
+    @Json(name = "url") val url: String,
+    @Json(name = "html_url") val htmlUrl: String,
+    @Json(name = "followers_url") val followersUrl: String,
+    @Json(name = "following_url") val followingUrl: String,
+    @Json(name = "gists_url") val gistsUrl: String,
+    @Json(name = "starred_url") val starredUrl: String,
+    @Json(name = "subscriptions_url") val subscriptionsUrl: String,
+    @Json(name = "organizations_url") val organizationsUrl: String,
+    @Json(name = "repos_url") val reposUrl: String,
+    @Json(name = "events_url") val eventsUrl: String,
+    @Json(name = "received_events_url") val receivedEventsUrl: String,
+    @Json(name = "type") val type: String,
+    @Json(name = "site_admin") val siteAdmin: Boolean
+)
