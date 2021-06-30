@@ -56,5 +56,11 @@ object AppModule {
 
     @Provides
     @Singleton
+    fun provideDatabase(app: Application): RepositoryDatabase =
+        Room.databaseBuilder(app, RepositoryDatabase::class.java, "repository_database")
+            .build()
+
+    @Provides
+    @Singleton
     fun provideDispatcher(): CoroutineDispatcher = Dispatchers.IO
 }
