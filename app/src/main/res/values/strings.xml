@@ -10,4 +10,8 @@
     <string name="description_header">Description:</string>
     <string name="dummy_description">Dummy repository description</string>
     <string name="no_description">No description</string>
+
+    <!-- AlertDialog: -->
+    <string name="navigation_to_url_dialog_title">Do you want to navigate to this URL?</string>
+    <string name="repository_without_url">The clicked repository does not have a URL associated with it.</string>
 </resources>

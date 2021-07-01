@@ -2,9 +2,7 @@ package com.example.googlerepositories.di
 
 import android.app.Application
 import androidx.room.Room
-import androidx.room.migration.Migration
-import androidx.sqlite.db.SupportSQLiteDatabase
-import com.example.googlerepositories.BuildConfig
+import androidx.viewbinding.BuildConfig
 import com.example.googlerepositories.api.webservice.ApiRest
 import com.example.googlerepositories.data.RepositoryDatabase
 import com.example.googlerepositories.util.BASE_URL
@@ -58,17 +56,9 @@ object AppModule {
 
     @Provides
     @Singleton
-    fun provideMigration_2_3(): Migration = object : Migration(2, 3) {
-        override fun migrate(database: SupportSQLiteDatabase) {
-            database.execSQL("ALTER TABLE repositories ADD COLUMN language TEXT NOT NULL DEFAULT 'Kotlin'")
-        }
-    }
-
-    @Provides
-    @Singleton
-    fun provideDatabase(app: Application, migration: Migration): RepositoryDatabase =
+    fun provideDatabase(app: Application): RepositoryDatabase =
         Room.databaseBuilder(app, RepositoryDatabase::class.java, "repository_database")
-            .addMigrations(migration)
+            //.addMigrations(migration)
             .build()
 
     @Provides

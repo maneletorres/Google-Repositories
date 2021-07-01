@@ -15,9 +15,6 @@ import androidx.lifecycle.Observer
 import com.bumptech.glide.Glide
 import com.bumptech.glide.load.engine.DiskCacheStrategy
 import com.example.googlerepositories.R
-import retrofit2.Call
-import retrofit2.Callback
-import retrofit2.Response
 
 fun <T> LifecycleOwner.observe(liveData: LiveData<T>, observer: (T) -> Unit) {
     liveData.observe(this, Observer(observer))

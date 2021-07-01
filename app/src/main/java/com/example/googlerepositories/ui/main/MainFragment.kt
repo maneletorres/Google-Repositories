@@ -11,7 +11,6 @@ import androidx.activity.OnBackPressedCallback
 import androidx.core.view.isVisible
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
-import androidx.navigation.fragment.findNavController
 import com.example.googlerepositories.R
 import com.example.googlerepositories.databinding.FragmentMainBinding
 import com.example.googlerepositories.ui.base.BaseFragment
@@ -122,6 +121,7 @@ class MainFragment : BaseFragment() {
     private fun showDialog(url: String) {
         AlertDialog.Builder(requireActivity())
             .setTitle(R.string.navigation_to_url_dialog_title)
+            .setMessage(url)
             .setPositiveButton(android.R.string.ok) { _, _ ->
                 val intent = Intent(Intent.ACTION_VIEW, Uri.parse(url))
                 startActivity(intent)
