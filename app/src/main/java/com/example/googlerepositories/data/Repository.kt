@@ -14,7 +14,7 @@ data class Repository(
     val description: String?,
     val htmlUrl: String?,
     val fork: Boolean,
-    val language: String
+    val language: String?
 )
 
 data class Owner(
