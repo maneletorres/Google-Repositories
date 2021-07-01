@@ -13,10 +13,8 @@ import androidx.lifecycle.LifecycleOwner
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.Observer
 import com.bumptech.glide.Glide
+import com.bumptech.glide.load.engine.DiskCacheStrategy
 import com.example.googlerepositories.R
-import retrofit2.Call
-import retrofit2.Callback
-import retrofit2.Response
 
 fun <T> LifecycleOwner.observe(liveData: LiveData<T>, observer: (T) -> Unit) {
     liveData.observe(this, Observer(observer))
@@ -30,7 +28,10 @@ fun View.setVisible(visible: Boolean) {
 }
 
 fun ImageView.loadImage(url: String) {
-    Glide.with(this).load(url).error(R.drawable.ic_placeholder_image).into(this)
+    Glide.with(this)
+        .load(url)
+        .diskCacheStrategy(DiskCacheStrategy.ALL)
+        .error(R.drawable.ic_placeholder_image).into(this)
 }
 
 fun View.getString(resourceId: Int) = resources.getString(resourceId)

@@ -1,4 +1,4 @@
-package com.example.googlerepositories.ui
+package com.example.googlerepositories.rule
 
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.ExperimentalCoroutinesApi
@@ -9,9 +9,7 @@ import org.junit.rules.TestWatcher
 import org.junit.runner.Description
 
 @ExperimentalCoroutinesApi
-class CoroutinesTestRule : TestWatcher() {
-
-    val testDispatcher = TestCoroutineDispatcher()
+class CoroutinesTestRule(val testDispatcher: TestCoroutineDispatcher = TestCoroutineDispatcher()) : TestWatcher() {
 
     override fun starting(description: Description?) {
         super.starting(description)

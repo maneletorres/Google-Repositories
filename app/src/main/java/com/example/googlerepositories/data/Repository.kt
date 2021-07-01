@@ -12,12 +12,13 @@ data class Repository(
     @Embedded
     val owner: Owner,
     val description: String?,
-    val htmlUrl: String,
-    val fork: Boolean
+    val htmlUrl: String?,
+    val fork: Boolean,
+    val language: String?
 )
 
 data class Owner(
-    val login: String,
     val ownerId: Long,
-    val avatarUrl: String
+    val avatarUrl: String,
+    val ownerHtmlUrl: String?
 )

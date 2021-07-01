@@ -1,4 +1,4 @@
-package com.example.googlerepositories.ui
+package com.example.googlerepositories.mock
 
 import com.example.googlerepositories.api.repository.GitHubRepository
 import com.example.googlerepositories.data.Owner
@@ -18,10 +18,11 @@ fun createFakeRepository(): List<Repository> {
             1,
             "Name $i",
             "Full name $i",
-            Owner("Login $i", i.toLong(), "Avatar URL $i"),
+            Owner(i.toLong(), "Login $i", "Avatar URL $i"),
             "Description $i",
             "HTML URL $i",
-            fork
+            fork,
+            "Language $i"
         )
         repositoryList.add(repo)
     }

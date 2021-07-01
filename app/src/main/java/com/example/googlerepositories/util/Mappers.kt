@@ -13,11 +13,12 @@ fun RepositoryResponse.toRepository() : Repository =
         owner = owner.toOwner(),
         description = description,
         htmlUrl = htmlUrl,
-        fork = fork
+        fork = fork,
+        language = language,
     )
 
 fun OwnerResponse.toOwner(): Owner = Owner(
-    login = login,
     ownerId = id,
     avatarUrl = avatarUrl,
+    ownerHtmlUrl = htmlUrl
 )

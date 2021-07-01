@@ -2,7 +2,7 @@ package com.example.googlerepositories.di
 
 import android.app.Application
 import androidx.room.Room
-import com.example.googlerepositories.BuildConfig
+import androidx.viewbinding.BuildConfig
 import com.example.googlerepositories.api.webservice.ApiRest
 import com.example.googlerepositories.data.RepositoryDatabase
 import com.example.googlerepositories.util.BASE_URL
@@ -58,6 +58,7 @@ object AppModule {
     @Singleton
     fun provideDatabase(app: Application): RepositoryDatabase =
         Room.databaseBuilder(app, RepositoryDatabase::class.java, "repository_database")
+            //.addMigrations(migration)
             .build()
 
     @Provides

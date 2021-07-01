@@ -13,7 +13,8 @@ data class RepositoryResponse(
     @Json(name = "owner") val owner: OwnerResponse,
     @Json(name = "html_url") val htmlUrl: String,
     @Json(name = "description") val description: String?,
-    @Json(name = "fork") val fork: Boolean
+    @Json(name = "fork") val fork: Boolean,
+    @Json(name = "language") val language: String?
 )
 
 data class OwnerResponse(
